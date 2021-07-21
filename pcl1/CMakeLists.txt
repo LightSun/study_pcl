@@ -15,6 +15,10 @@ add_executable(pcl1
     testmain.h studyoctree.h
     testmain.cpp studyoctree.cpp
     study_sample_consensus.h study_sample_consensus.cpp
+    study_range_image.h study_range_image.cpp
+    study_fliter.h study_fliter.cpp
+    studyio.h studyio.cpp
+    study_key_point.h study_key_point.cpp
     main.cpp)
 
 target_link_libraries (pcl1 ${PCL_LIBRARIES})
