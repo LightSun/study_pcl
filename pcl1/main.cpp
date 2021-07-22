@@ -9,6 +9,8 @@
 #include "study_fliter.h"
 #include "studyio.h"
 #include "study_key_point.h"
+#include "study_features.h"
+#include "study_segmentation.h"
 
 //based on pcl-1.9.1
 int main(int argc, char ** argv)
@@ -32,8 +34,23 @@ int main(int argc, char ** argv)
 
     // Study_Filter::test_pass_through();
     //Study_Filter::test_condition_removal(argc, argv);
+    //Study_Filter::test_extract_indices();
+   // Study_Filter::test_bilateral_filter();
 
-    Study_Key_Point::test_narf_extract(argc, argv);
+    //Study_Key_Point::test_narf_extract(argc, argv);
+
+   // std::string file = "D:/tools/pcl_runtimes/data-master/tutorials/table_scene_lms400.pcd";
+   // Study_Features::test_1(file, "D:/tools/pcl_runtimes/table_scene_lms400_f1.pcd");
+   // Study_Features::test_2(file, "D:/tools/pcl_runtimes/table_scene_lms400_f2.pcd");
+   // Study_Features::test_3(file, "D:/tools/pcl_runtimes/table_scene_lms400_downsampled.pcd",
+    //"D:/tools/pcl_runtimes/table_scene_lms400_f3.pcd");
+
+  //  Study_Features::test_fth("D:/tools/pcl_runtimes/data-master/tutorials/ism_test_cat.pcd");
+   // Study_Features::test_4();
+    //Study_Features::test_normal_estimation(argc, argv);
+    Study_Features::test_pfh_estimation();
+
+  //  Study_Segmentation::test_1();
 
     system("pause");
     return (result);

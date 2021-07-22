@@ -122,6 +122,7 @@ void Study_Key_Point::test_narf_extract(int argc, char **argv){
     float noise_level = 0.0;
     float min_range = 0.0f;
     int border_size = 1;
+    //深度图
     boost::shared_ptr<pcl::RangeImage> range_image_ptr(new pcl::RangeImage);
     pcl::RangeImage &range_image = *range_image_ptr;
     range_image.createFromPointCloud(point_cloud, angular_resolution,

@@ -19,6 +19,8 @@ add_executable(pcl1
     study_fliter.h study_fliter.cpp
     studyio.h studyio.cpp
     study_key_point.h study_key_point.cpp
+    study_features.h study_features.cpp
+    study_segmentation.h study_segmentation.cpp
     main.cpp)
 
 target_link_libraries (pcl1 ${PCL_LIBRARIES})
