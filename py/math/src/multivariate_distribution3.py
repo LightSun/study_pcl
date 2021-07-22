@@ -25,6 +25,8 @@ T = Rot.dot(Scale)
 # Apply transformation matrix to X
 Y = T.dot(X)
 
+print(Y.shape)
+
 # 原始点集
 plt.scatter(X[0, :], X[1, :])
 # 缩放、旋转后
@@ -35,6 +37,8 @@ plt.show()
 
 # Covariance
 def cov(x, y):
+    print("len_x = ", len(x))
+    print("len_y = ", len(y))
     xbar, ybar = x.mean(), y.mean()
     return np.sum((x - xbar)*(y - ybar))/(len(x) - 1)
 
@@ -42,5 +46,17 @@ def cov(x, y):
 def cov_mat(X):
     return np.array([[cov(X[0], X[0]), cov(X[0], X[1])],
                      [cov(X[1], X[0]), cov(X[1], X[1])]])
-# Calculate covariance matrix
+# Calculate covariance matrix 计算协方差矩阵
 print(cov_mat(Y)) # (or with np.cov(Y))
+
+# https://robot.czxy.com/docs/pcl/chapter03/point_cloud_math/
+# 特征分解(旋转矩阵和特征向量矩阵相关，缩放矩阵与特征值矩阵相关)
+sigma = np.array([
+    [19 / 16, -15 * np.sqrt(3) / 16,],
+    [-15 * np.sqrt(3) / 16, 49 / 16]
+])
+
+eVa, eVe = np.linalg.eig(sigma)
+print("eigen value:\n", eVa)
+print("eigen vector:\n", eVe)
+
