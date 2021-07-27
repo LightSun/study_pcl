@@ -2,6 +2,7 @@
 #define STUDY_REGISTRATION_H
 
 /**
+   点云配准
   原理： https://robot.czxy.com/docs/pcl/chapter03/registration_intro/
  */
 class Study_Registration

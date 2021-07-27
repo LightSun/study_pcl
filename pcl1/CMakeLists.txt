@@ -31,6 +31,8 @@ add_executable(pcl1
     study_segmentation.h study_segmentation.cpp
     study_registration.h study_registration.cpp
     volum_detect_viewer.h volum_detect_viewer.cpp
+    study_surface_reconstruction.h study_surface_reconstruction.cpp
+    study_3dobj_containment_box.h study_3dobj_containment_box.cpp
     main.cpp)
 
 target_link_libraries (pcl1 ${PCL_LIBRARIES} ${OPENCV_LIBS})

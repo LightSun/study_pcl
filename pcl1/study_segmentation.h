@@ -16,7 +16,11 @@ class Study_Segmentation
 public:
     static void test_1();
 
-    static void test_2();
+    //圆柱体模型分割: https://robot.czxy.com/docs/pcl/chapter04/segmentation/
+    static void test_cylinder_seg();
+
+    //欧式聚类提取
+    static void test_cluster_extraction();
 };
 
 #endif // STUDY_SEGMENTATION_H

@@ -12,6 +12,7 @@
 #include "study_features.h"
 #include "study_segmentation.h"
 #include "study_registration.h"
+#include "study_surface_reconstruction.h"
 
 //based on pcl-1.9.1
 //pcd资源 来自pcl官方和 pcl-learning(github)
@@ -52,12 +53,16 @@ int main(int argc, char ** argv)
     //Study_Features::test_normal_estimation(argc, argv);
    // Study_Features::test_pfh_estimation();
 
-  //  Study_Segmentation::test_1();
+     // Study_Segmentation::test_1();
+     // Study_Segmentation::test_cylinder_seg();
+     // Study_Segmentation::test_cluster_extraction();
 
   //  Study_Registration::test_Icp();
    // Study_Registration::test_ndt();
    // Study_Registration::test_robust_default();
-    Study_Registration::test_interactive_icp(argc, argv);
+   // Study_Registration::test_interactive_icp(argc, argv);
+
+    Study_Surface_reconstruction::test_resample();
 
     system("pause");
     return (result);
