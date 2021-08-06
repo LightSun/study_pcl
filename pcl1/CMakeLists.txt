@@ -11,8 +11,14 @@ include_directories(${PCL_INCLUDE_DIRS})
 link_directories(${PCL_LIBRARY_DIRS})
 add_definitions(${PCL_DEFINITIONS})
 
+#opencv
 include_directories(E:/study/cpp/cpp_builds/opencv/build/include)
 link_directories(E:/study/cpp/cpp_builds/opencv/sources/.build/lib/Debug)
+#libLAS
+include_directories(E:/study/cpp/cpp_builds/liblas_build/msvc_debug/include)
+link_directories(E:/study/cpp/cpp_builds/liblas_build/msvc_debug/lib)
+SET(LIBLAS_LIBS liblas liblas_c)
+
 SET(OPENCV_LIBS opencv_core451d
     opencv_highgui451d
     opencv_imgcodecs451d
@@ -35,4 +41,4 @@ add_executable(pcl1
     study_3dobj_containment_box.h study_3dobj_containment_box.cpp
     main.cpp)
 
-target_link_libraries (pcl1 ${PCL_LIBRARIES} ${OPENCV_LIBS})
+target_link_libraries (pcl1 ${PCL_LIBRARIES} ${OPENCV_LIBS} ${LIBLAS_LIBS})

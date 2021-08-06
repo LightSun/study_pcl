@@ -34,6 +34,7 @@ int main(int argc, char ** argv)
 
    // StudyIO::stl2pcd("D:/360Downloads/pcl_files/71_final.stl", "D:/360Downloads/pcl_files/71_final_stl.pcd");
    // StudyIO::obj2pcd("D:/360Downloads/pcl_files/71_final.obj", "D:/360Downloads/pcl_files/71_final_obj.pcd");
+    StudyIO::pcd2las("D:/360Downloads/pcl_files/71_final_stl.pcd", "D:/360Downloads/pcl_files/71_final.las");
 
     // Study_Filter::test_pass_through();
     //Study_Filter::test_condition_removal(argc, argv);
@@ -62,7 +63,7 @@ int main(int argc, char ** argv)
    // Study_Registration::test_robust_default();
    // Study_Registration::test_interactive_icp(argc, argv);
 
-    Study_Surface_reconstruction::test_resample();
+   // Study_Surface_reconstruction::test_resample();
 
     system("pause");
     return (result);
