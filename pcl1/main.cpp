@@ -34,7 +34,8 @@ int main(int argc, char ** argv)
 
    // StudyIO::stl2pcd("D:/360Downloads/pcl_files/71_final.stl", "D:/360Downloads/pcl_files/71_final_stl.pcd");
    // StudyIO::obj2pcd("D:/360Downloads/pcl_files/71_final.obj", "D:/360Downloads/pcl_files/71_final_obj.pcd");
-    StudyIO::pcd2las("D:/360Downloads/pcl_files/71_final_stl.pcd", "D:/360Downloads/pcl_files/71_final.las");
+   // StudyIO::pcd2las("D:/360Downloads/pcl_files/71_final_stl.pcd", "D:/360Downloads/pcl_files/71_final.las");
+   // StudyIO::ply2pcd("F:/work/ply_data/source/RPC_BA32_3603_2013_rgb.ply", "F:/work/ply_data/source/RPC_BA32_3603_2013_rgb.pcd");
 
     // Study_Filter::test_pass_through();
     //Study_Filter::test_condition_removal(argc, argv);
@@ -56,7 +57,7 @@ int main(int argc, char ** argv)
 
      // Study_Segmentation::test_1();
      // Study_Segmentation::test_cylinder_seg();
-     // Study_Segmentation::test_cluster_extraction();
+      Study_Segmentation::test_cluster_extraction();
 
   //  Study_Registration::test_Icp();
    // Study_Registration::test_ndt();

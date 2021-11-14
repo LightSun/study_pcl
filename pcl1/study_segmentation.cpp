@@ -225,7 +225,8 @@ void Study_Segmentation::test_cluster_extraction(){
     pcl::PointCloud<pcl::PointXYZ>::Ptr cloud(new pcl::PointCloud<pcl::PointXYZ>), cloud_f(
                 new pcl::PointCloud<pcl::PointXYZ>);
     //reader.read("data-master/tutorials/tabletop.pcd", *cloud);
-    reader.read("table_scene_lms400.pcd", *cloud);
+   // reader.read("table_scene_lms400.pcd", *cloud);
+    reader.read("F:/work/ply_data/source/RPC_BA32_3603_2013_rgb.pcd", *cloud);
 
     std::cout << "PointCloud before filtering has: " << cloud->points.size() << " data points." << std::endl; //*
 

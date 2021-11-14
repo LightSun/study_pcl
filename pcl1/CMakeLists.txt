@@ -5,27 +5,33 @@ project(pcl1 LANGUAGES CXX)
 set(CMAKE_CXX_STANDARD 11)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
+#include(F:/ProgramData/PCL_1.12.0/cmake/PCLConfig.cmake)
 find_package(PCL 1.2 REQUIRED)
 
 include_directories(${PCL_INCLUDE_DIRS})
 link_directories(${PCL_LIBRARY_DIRS})
 add_definitions(${PCL_DEFINITIONS})
 
-#opencv
-include_directories(E:/study/cpp/cpp_builds/opencv/build/include)
-link_directories(E:/study/cpp/cpp_builds/opencv/sources/.build/lib/Debug)
-#libLAS
-include_directories(E:/study/cpp/cpp_builds/liblas_build/msvc_debug/include)
-link_directories(E:/study/cpp/cpp_builds/liblas_build/msvc_debug/lib)
-SET(LIBLAS_LIBS liblas liblas_c)
+#opencv work
+#include_directories(E:/study/cpp/cpp_builds/opencv/build/include)
+#link_directories(E:/study/cpp/cpp_builds/opencv/sources/.build/lib/Debug)
+#SET(OPENCV_LIBS opencv_core451d
+#    opencv_highgui451d
+#    opencv_imgcodecs451d
+#    opencv_imgproc451d
+#    opencv_videoio451d)
 
-SET(OPENCV_LIBS opencv_core451d
-    opencv_highgui451d
-    opencv_imgcodecs451d
-    opencv_imgproc451d
-    opencv_videoio451d)
+# opencv home
+include_directories(F:/work/opencv_x64/opencv/build/include)
+link_directories(F:/work/opencv_x64/opencv/build/x64/vc15/lib)
+SET(OPENCV_LIBS opencv_world454)
+#libLAS
+#include_directories(E:/study/cpp/cpp_builds/liblas_build/msvc_debug/include)
+#link_directories(E:/study/cpp/cpp_builds/liblas_build/msvc_debug/lib)
+#SET(LIBLAS_LIBS liblas liblas_c)
 
 add_executable(pcl1
+    compile_config.h
     testmain.h studyoctree.h
     testmain.cpp studyoctree.cpp
     study_sample_consensus.h study_sample_consensus.cpp
@@ -41,4 +47,6 @@ add_executable(pcl1
     study_3dobj_containment_box.h study_3dobj_containment_box.cpp
     main.cpp)
 
-target_link_libraries (pcl1 ${PCL_LIBRARIES} ${OPENCV_LIBS} ${LIBLAS_LIBS})
+target_link_libraries (pcl1 ${PCL_LIBRARIES} ${OPENCV_LIBS}
+    #${LIBLAS_LIBS}
+    )

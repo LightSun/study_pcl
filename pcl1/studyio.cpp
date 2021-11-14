@@ -14,8 +14,9 @@
 
 #include <pcl/visualization/pcl_visualizer.h>
 
-
+#ifdef COMPILE_WITH_BLAS
 #include <liblas/liblas.hpp>
+#endif
 #include <iomanip>
 #include <iostream>
 #include <sstream>
@@ -74,6 +75,7 @@ void StudyIO::obj2pcd(const std::string& objPath, const std::string& savePcdPath
         viewer->spinOnce ();
     }
 }
+#ifdef COMPILE_WITH_BLAS
 void StudyIO::las2pcd(const std::string& inPath, const std::string& outPath){
     //打开las文件
     std::ifstream ifs;
@@ -164,4 +166,16 @@ void StudyIO::pcd2las(const std::string& inPath, const std::string& outPath){
        header.SetMax(maxPt[0], maxPt[1], maxPt[2]);
        header.SetMin(minPt[0], minPt[1], minPt[2]);
        writer.SetHeader(header);
+}
+#endif
+#include <pcl/io/ply_io.h>
+void StudyIO::ply2pcd(const std::string& plyPath, const std::string& savePcdPath){
+      pcl::PCLPointCloud2 point_cloud2;
+      pcl::PLYReader reader;
+      reader.read(plyPath, point_cloud2);
+      pcl::PointCloud<pcl::PointXYZ> point_cloud; //PointXYZ /PointXYZI/PointXYZRGB
+      pcl::fromPCLPointCloud2( point_cloud2, point_cloud);
+      //pcl::io::savePCDFileASCII(savePcdPath, *point_cloud);
+      pcl::PCDWriter writer;
+      writer.writeASCII(savePcdPath, point_cloud);
 }

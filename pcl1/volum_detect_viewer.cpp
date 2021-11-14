@@ -250,7 +250,8 @@ public:
                         cloud_hull->points[polygons[0].vertices[j]].y));
                 }
 
-                RotatedRect minRect = minAreaRect(hullContour);
+                //TODO RotatedRect minRect = cv::minAreaRect(hullContour);
+                RotatedRect minRect;
 
                 // TODO：此处的长宽与实际需要进行换算
 

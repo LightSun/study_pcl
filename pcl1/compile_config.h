@@ -1,0 +1,6 @@
+#ifndef COMPILE_CONFIG_H
+#define COMPILE_CONFIG_H
+
+//#define COMPILE_WITH_BLAS 1
+
+#endif // COMPILE_CONFIG_H
